@@ -1,0 +1,7 @@
+#!/bin/bash
+BASE=$(dirname $(readlink -f $0))
+DATE=$(date +%s)
+source $BASE/env
+
+mysqldump -h $MYSQLHOST -u $MYSQLUSER -p$MYSQLPASSWORD $MYSQLDB > $BACKUPPATH/$DATE.$MYSQLDB.sql
+tar czvf $BACKUPPATH/$DATE.documents.tar.gz $DOCUMENTS
