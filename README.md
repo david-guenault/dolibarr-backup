@@ -31,7 +31,7 @@ Create a cron job to execute the script
 crontab -e 
 
 00 00 * * * /usr/local/dolibarr/backup 
-06 00 * * * /usr/local/dolibarr/backup 
-12 00 * * * /usr/local/dolibarr/backup 
-18 00 * * * /usr/local/dolibarr/backup
+06 06 * * * /usr/local/dolibarr/backup 
+00 12 * * * /usr/local/dolibarr/backup 
+00 18 * * * /usr/local/dolibarr/backup
 ```
