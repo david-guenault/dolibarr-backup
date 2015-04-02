@@ -3,7 +3,7 @@ BASE=$(dirname $(readlink -f $0))
 DATE=$(date +%s)
 source $BASE/env
 
-mysqldump -h $MYSQLHOST -u $MYSQLUSER -p$MYSQLPASSWORD $MYSQLDB > $BACKUPPATH/$DATE.$MYSQLDB.sql
+mysqldump  --single-transaction -h $MYSQLHOST -u $MYSQLUSER -p$MYSQLPASSWORD $MYSQLDB > $BACKUPPATH/$DATE.$MYSQLDB.sql
 tar czvf $BACKUPPATH/$DATE.documents.tar.gz $DOCUMENTS
 
 COUNT=$(ls -1t $BACKUPPATH/*.sql | wc -l)
